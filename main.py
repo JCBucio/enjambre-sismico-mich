@@ -68,12 +68,7 @@ app.layout = html.Div([
             dcc.Markdown(id='count-label'),
     ], style={'flex': 1, 'textAlign': 'center'}),
     ], style={'display': 'flex', 'flexDirection': 'row'}),
-    dcc.Loading(
-        id="loading-1",
-        type="default",
-        children=html.Div(id="loading-output-1", style={'padding': '30px'}),
-    ),
-    dcc.Graph(id='graph', style={'height': '60vh'}),
+    dcc.Loading(dcc.Graph(id='graph', style={'height': '60vh'}), type='cube'),
     html.Div([
         html.Div([
             html.Div([
@@ -107,7 +102,6 @@ app.layout = html.Div([
 # Define the callback for the graph
 @app.callback(
     Output('graph', 'figure'),
-    Output('loading-output-1', 'children'),
     Output('count-label', 'children'),
     Input('range-slider', 'value'),
     Input('date-picker-range', 'start_date'),
@@ -211,7 +205,7 @@ def update_chart(slider_range, start_date, end_date, topo_exag):
             title_x=0.5
        )
     
-    return fig, " ", count_label
+    return fig, count_label
 
 if __name__ == '__main__':
     app.run_server(debug=False)
