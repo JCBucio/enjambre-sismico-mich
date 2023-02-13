@@ -40,7 +40,7 @@ foot_label = '''
 - Sismos del [Servicio Sismológico Nacional](http://www.ssn.unam.mx/).
 - Topografía de [OpenTopography](https://www.opentopography.org/).
 - Código fuente en [GitHub](https://github.com/JCBucio/enjambre-sismico-mich).
-- Creado por [Juan Carlos Bucio T.](https://jcbucio.github.io/)
+- Creado por [Juan Carlos Bucio T.](https://jcbucio.github.io/).
 '''
 
 marks_range = np.arange(2.0, 5.0, 0.5)
